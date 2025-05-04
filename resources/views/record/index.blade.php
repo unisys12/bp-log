@@ -1,5 +1,10 @@
 <x-layouts.app :title="__('Records')">
-    <div class="flex h-full w-full flex-1 flex-col gap-4 rounded-xl">
+    <x-dashboard-heading
+    :heading="__('Records')"
+    :subheading="__('Display of all records')"
+    />
+    {{--  --}}
+    <div class="flex h-full w-full flex-1 flex-col gap-4 rounded-xl" id="records">
         <div class="overflow-x-auto">
         <table class="min-w-full divide-y-2 divide-gray-200 dark:divide-gray-700">
             <thead class="ltr:text-left rtl:text-right">

@@ -16,6 +16,7 @@ class Record extends Model
      * @var list<string>
      */
     protected $fillable = [
+        'user_id',
         "date",
         "time",
         "weight",
