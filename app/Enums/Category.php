@@ -35,7 +35,8 @@ enum Category: string
             => self::Elevated->value,
 
             /**
-             * Had to move this condition here because it was conflicting with the Hypertension Stage 1 condition.
+             * Had to move this condition here because it was
+             * conflicting with the Hypertension Stage 1 condition.
              */
             $systolic > 180 ||
                 $diastolic > 120
