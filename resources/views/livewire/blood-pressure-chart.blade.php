@@ -21,7 +21,7 @@ const chart = new Chart(ctx, {
                 data: bpdata.map(item => item.systolic),
                 borderColor: 'rgba(255, 99, 132, 1)',
                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                fill: true,
+                fill: false,
                 yAxisID: 'y',
             },
             {
@@ -29,9 +29,16 @@ const chart = new Chart(ctx, {
                 data: bpdata.map(item => item.diastolic),
                 borderColor: 'rgba(54, 162, 235, 1)',
                 backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                fill: true,
+                fill: false,
                 yAxisID: 'y1',
             },
+            {
+                label: 'Pulse Pressure',
+                data: bpdata.map(item => item.systolic - item.diastolic),
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(25, 25, 192, 0.2)',
+                fill: false,
+            }
         ],
     },
     options: {
