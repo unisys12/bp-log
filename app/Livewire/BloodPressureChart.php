@@ -2,9 +2,11 @@
 
 namespace App\Livewire;
 
+use App\Enums\Category;
 use App\Models\Record;
-use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use App\Enums\PulsePressure;
+use Illuminate\Support\Facades\Auth;
 
 class BloodPressureChart extends Component
 {
@@ -22,6 +24,11 @@ class BloodPressureChart extends Component
                     'systolic' => $record->systolic,
                     'diastolic' => $record->diastolic,
                     'date' => $record->date->format('Y-m-d'),
+                    'blood_pressure_status' => Category::status($record->systolic, $record->diastolic),
+                    'pulse_pressure' => Category::pulsePressure($record->systolic, $record->diastolic),
+                    'pulse_pressure_status' => PulsePressure::status(
+                        Category::pulsePressure($record->systolic, $record->diastolic)
+                    ),
                 ];
             });
     }
