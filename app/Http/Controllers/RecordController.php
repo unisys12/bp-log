@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Record;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RecordController extends Controller
 {
@@ -12,7 +13,9 @@ class RecordController extends Controller
      */
     public function index()
     {
-        return view('record.index', ['records' => Record::all()]);
+        $records = Record::where('user_id', Auth::user()->id)
+            ->orderBy('date', 'desc')->get();
+        return view('record.index', ['records' => $records]);
     }
 
     /**
