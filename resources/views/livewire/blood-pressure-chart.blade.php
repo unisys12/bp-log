@@ -8,10 +8,6 @@
   <canvas id="ppChart"></canvas>
 </div>
 
-@php
-    use App\Enums\PulsePressure;
-@endphp
-
 @script
 <script>
 const bpctx = document.getElementById('bpChart').getContext('2d');
