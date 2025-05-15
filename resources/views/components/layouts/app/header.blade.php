@@ -19,7 +19,9 @@
                     icon="book-open"
                     :href="route('records.index')"
                     :current="request()->routeIs('records.index')"
-                    wire:navigate>{{ __('Records') }}</flux:navlist.item>
+                    wire:navigate>
+                    {{ __('Records') }}
+                </flux:navlist.item>
             </flux:navbar>
 
             <flux:spacer />
@@ -105,6 +107,13 @@
                 <flux:navlist.group :heading="__('Platform')">
                     <flux:navlist.item icon="layout-grid" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
                       {{ __('Dashboard') }}
+                    </flux:navlist.item>
+                    <flux:navlist.item
+                    icon="book-open"
+                    :href="route('records.index')"
+                    :current="request()->routeIs('records.index')"
+                    wire:navigate>
+                        {{ __('Records') }}
                     </flux:navlist.item>
                 </flux:navlist.group>
             </flux:navlist>
