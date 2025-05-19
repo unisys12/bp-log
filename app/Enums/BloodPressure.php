@@ -49,7 +49,8 @@ enum BloodPressure: string
             => self::HypertensionStage1->value,
 
             $systolic >= 140 ||
-                $diastolic >= 90
+                $diastolic >= 90 &&
+                $diastolic <= 120
             => self::HypertensionStage2->value,
 
             default => 'Awaiting valid reading...',
